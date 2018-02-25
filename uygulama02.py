@@ -1,5 +1,6 @@
 _auther_='Tarık Ünal'
 #Saniye cinsinden verilen veriyi yıl, ay, gün, saat, dakika ve saniyeye dönüştüren formül..
+#Uygulama02
 girdi = int(input("Saniye cinsinden bir değer giriniz...:"))
 yil = girdi / 31557600
 ay = (girdi % 31557600) / 2629800
