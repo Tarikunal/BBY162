@@ -1,6 +1,9 @@
 #06.03.2018
 _auther_='Tarık Ünal'
-#Basit Sözlük Örneği
+"""
+   Basit Sözlük Örneği
+   Uygulama03
+"""
 
 onemli_numaralar = {"Ambulans":112,"Polis":155,"İtfaiye":110,"Jandarma":156,"Bilinmeyen Numaralar":118,"TTNET":145,"Data Arıza":124,"Gaz Arıza":187,"Elektrik Arıza":186,"Su Arıza":185}
 secenekler = """
