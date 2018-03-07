@@ -1,4 +1,4 @@
-_auther_='Tarık Ünal'
+_author_='Tarık Ünal'
 #Saniye cinsinden verilen veriyi yıl, ay, gün, saat, dakika ve saniyeye dönüştüren formül..
 #Uygulama02
 girdi = int(input("Saniye cinsinden bir değer giriniz...:"))
