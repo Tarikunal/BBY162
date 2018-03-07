@@ -1,5 +1,5 @@
 #06.03.2018
-_auther_='Tarık Ünal'
+_author_='Tarık Ünal'
 """
    Basit Sözlük Örneği
    Uygulama03
