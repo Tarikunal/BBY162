@@ -1,4 +1,4 @@
-#10.03.2018
+#17.03.2018
 _author_='Tarık Ünal'
 """
 Random şarkı/şiir yazan uygulama
