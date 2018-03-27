@@ -1,3 +1,6 @@
+_author_='Tarık Ünal'
+#27.03.18
+
 import random
 
 file = open('kelimelistesi.txt', "r") #Dışardan kelime aldırmak için..
