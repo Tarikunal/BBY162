@@ -37,7 +37,7 @@ while dongu:
                 print("Bu harfi zaten girdiniz...\n")
             else:
 
-                bulduk = None
+                KelDo = None
 
                 for i in range(len(kelimeSec)):
 
