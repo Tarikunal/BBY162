@@ -21,7 +21,7 @@ dongu = 1
 
 while dongu:
 
-    print(" ".join(gosterilecek),"\n").
+    print(" ".join(gosterilecek),"\n")
 
     alinanharf = input("Bir harf giriniz..:").lower() 
 
