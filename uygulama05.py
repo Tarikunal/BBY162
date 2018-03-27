@@ -22,18 +22,18 @@ while dongu:
 
     print(" ".join(gosterilecek), "\n")
 
-    alinanharf = input("Bir harf giriniz..:").lower()
+    girilenHarf = input("Bir harf giriniz..:").lower()
 
     try:
-        int(alinanharf)
+        int(girilenHarf)
         print("Tek bir harf giriniz...\n")
     except:
 
-        if len(alinanharf) > 1:
+        if len(girilenHarf) > 1:
             print("Harf giriniz!\n")
         else:
 
-            if alinanharf in harfler:
+            if girilenHarf in harfler:
                 print("Bu harfi zaten girdiniz...\n")
             else:
 
@@ -41,13 +41,13 @@ while dongu:
 
                 for i in range(len(kelimeSec)):
 
-                    if alinanharf == kelimeSec[i]:
+                    if girilenHarf == kelimeSec[i]:
 
                         KelDo = True
 
-                        gosterilecek[i] = alinanharf
+                        gosterilecek[i] = girilenHarf
 
-                        harfler.append(alinanharf)
+                        harfler.append(girilenHarf)
 
                         if altcizgi not in gosterilecek:
                             print(" ".join(gosterilecek))
@@ -62,7 +62,7 @@ while dongu:
 
                         print("Yanlış harf. Kalan hakkınız: %s\n" % kalanhak)
 
-                        harfler.append(alinanharf)
+                        harfler.append(girilenHarf)
 
                 if kalanhak == 0:
                     print("Kaybettin! Doğru kelime =  %s  \n" % kelimeSec)
