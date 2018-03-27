@@ -1,14 +1,14 @@
-_author_='Tarık Ünal'
-#27.03.18
+_author_ = 'Tarık Ünal'
+# 27.03.18
 
 import random
 
-file = open('kelimelistesi.txt', "r") #Dışardan kelime aldırmak için..
+file = open('kelimelistesi.txt', "r")  # Dışardan kelime aldırmak için..
 sozluk = file.read().split()
 file.close()
 
 sozlukboyutu = len(sozluk)
-kelimeSec = sozluk[random.randint(0, sozlukboyutu)] #Kelimenin seçimi için..
+kelimeSec = sozluk[random.randint(0, sozlukboyutu)]  # Kelimenin seçimi için..
 
 harfler = []
 kalanhak = 7
@@ -18,12 +18,11 @@ gosterilecek = list(altcizgi * len(kelimeSec))
 
 dongu = 1
 
-
 while dongu:
 
-    print(" ".join(gosterilecek),"\n")
+    print(" ".join(gosterilecek), "\n")
 
-    alinanharf = input("Bir harf giriniz..:").lower() 
+    alinanharf = input("Bir harf giriniz..:").lower()
 
     try:
         int(alinanharf)
@@ -41,31 +40,30 @@ while dongu:
                 bulduk = None
 
                 for i in range(len(kelimeSec)):
-                 
+
                     if alinanharf == kelimeSec[i]:
 
-                        bulduk = True
+                        KelDo = True
 
                         gosterilecek[i] = alinanharf
 
-                        harfler.append(alinanharf) 
+                        harfler.append(alinanharf)
 
                         if altcizgi not in gosterilecek:
-
-                            print(" ".join(gosterilecek)) 
+                            print(" ".join(gosterilecek))
                             print("\nTebrikler kelimeyi buldunuz...")
 
                             dongu = 0
-                            
+
                 else:
 
-                    if bulduk != True:
+                    if KelDo != True:
                         kalanhak -= 1
 
-                        print("Yanlış harf. Kalan hakkınız: %s\n" %kalanhak)
+                        print("Yanlış harf. Kalan hakkınız: %s\n" % kalanhak)
 
                         harfler.append(alinanharf)
 
                 if kalanhak == 0:
-                    print("Kaybettin! Doğru kelime =  %s  \n" %kelimeSec)
+                    print("Kaybettin! Doğru kelime =  %s  \n" % kelimeSec)
                     break
