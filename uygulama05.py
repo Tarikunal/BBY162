@@ -21,14 +21,14 @@ dongu = 1
 
 while dongu:
 
-    print(" ".join(gosterilecek),"\n") # Aralarında boşluk olacak şekilde kelimenin karakterlerini birleştiriyor.
+    print(" ".join(gosterilecek),"\n").
 
-    alinanharf = input("Bir harf giriniz..:").lower() # Büyük-küçük harf uyumluluğu için küçük harfe çevirdim.
+    alinanharf = input("Bir harf giriniz..:").lower() 
 
-    try: # try, input ile alınan verinin sayı olup olmadığını kontrol eder.
+    try:
         int(alinanharf)
         print("Tek bir harf giriniz...\n")
-    except: # Except alınan harf 1 den uzun olduğunda hata mesajı verir.
+    except:
 
         if len(alinanharf) > 1:
             print("Harf giriniz!\n")
@@ -41,22 +41,22 @@ while dongu:
                 bulduk = None
 
                 for i in range(len(kelimeSec)):
-                    # kullanıcının girdiği harf, bulunucak kelimenin "i" nin taşıdığı sayı değerindeki indeksteki harfe eşit ise,
+                 
                     if alinanharf == kelimeSec[i]:
 
                         bulduk = True
 
                         gosterilecek[i] = alinanharf
 
-                        harfler.append(alinanharf) # Alınan harf, harf havuzuna eklendi.
+                        harfler.append(alinanharf) 
 
                         if altcizgi not in gosterilecek:
 
-                            print(" ".join(gosterilecek)) # Aralarında boşluk olacak şekilde kelimenin karakterlerini birleştiriyor.
+                            print(" ".join(gosterilecek)) 
                             print("\nTebrikler kelimeyi buldunuz...")
 
                             dongu = 0
-                            # Girilen harf aranan kelime içinde yoksa alttaki kodlar çalıştırılacak.
+                            
                 else:
 
                     if bulduk != True:
@@ -64,7 +64,7 @@ while dongu:
 
                         print("Yanlış harf. Kalan hakkınız: %s\n" %kalanhak)
 
-                        harfler.append(alinanharf) # Alınan harf, harf havuzuna eklendi
+                        harfler.append(alinanharf)
 
                 if kalanhak == 0:
                     print("Kaybettin! Doğru kelime =  %s  \n" %kelimeSec)
