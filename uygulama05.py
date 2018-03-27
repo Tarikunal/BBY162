@@ -68,5 +68,4 @@ while dongu:
 
                 if kalanhak == 0:
                     print("Kaybettin! Doğru kelime =  %s  \n" %kelimeSec)
-
                     break
