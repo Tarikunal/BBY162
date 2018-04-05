@@ -1,69 +1,34 @@
-_author_ = 'Tarık Ünal'
-# 27.03.18
-
+__author__='Tarık Ünal'
+#05.04.18
+print("Adamasmaca Oyununa Hoşgeldiniz.\n")
 import random
-
-file = open('kelimelistesi.txt', "r")  # Dışardan kelime aldırmak için..
+i = 0
+Hak = 4
+file = open('kelimelistesi.txt', "r")
 sozluk = file.read().split()
 file.close()
-
 sozlukboyutu = len(sozluk)
-kelimeSec = sozluk[random.randint(0, sozlukboyutu)]  # Kelimenin seçimi için..
+gizliKelime = sozluk[random.randint(0, sozlukboyutu)]
+#print(gizliKelime)
+bosluk = []
 
-harfler = []
-kalanhak = 7
-altcizgi = "_"
+for kelimeIslem in gizliKelime :
+    bosluk.append("_")
+print(bosluk)
 
-gosterilecek = list(altcizgi * len(kelimeSec))
-
-dongu = 1
-
-while dongu:
-
-    print(" ".join(gosterilecek), "\n")
-
-    girilenHarf = input("Bir harf giriniz..:").lower()
-
-    try:
-        int(girilenHarf)
-        print("Tek bir harf giriniz...\n")
-    except:
-
-        if len(girilenHarf) > 1:
-            print("Harf giriniz!\n")
-        else:
-
-            if girilenHarf in harfler:
-                print("Bu harfi zaten girdiniz...\n")
-            else:
-
-                KelDo = None
-
-                for i in range(len(kelimeSec)):
-
-                    if girilenHarf == kelimeSec[i]:
-
-                        KelDo = True
-
-                        gosterilecek[i] = girilenHarf
-
-                        harfler.append(girilenHarf)
-
-                        if altcizgi not in gosterilecek:
-                            print(" ".join(gosterilecek))
-                            print("\nTebrikler kelimeyi buldunuz...")
-
-                            dongu = 0
-
-                else:
-
-                    if KelDo != True:
-                        kalanhak -= 1
-
-                        print("Yanlış harf. Kalan hakkınız: %s\n" % kalanhak)
-
-                        harfler.append(girilenHarf)
-
-                if kalanhak == 0:
-                    print("Kaybettin! Doğru kelime =  %s  \n" % kelimeSec)
-                    break
+while Hak > 0:
+    i = 0
+    tahmin= input("\nHarf giriniz: ").lower()
+    if tahmin in gizliKelime:
+        for bak in gizliKelime:
+            if gizliKelime[i] == tahmin:
+                bosluk[i] = tahmin
+            i += 1
+        print(bosluk)
+    else:
+        i = 0
+        Hak -=1
+        print("Kalan Can:" + str(Hak))
+    if Hak == 0:
+        print('Kaybettin. Doğru kelime "{}" idi.\n'.format(gizliKelime))
+        break
