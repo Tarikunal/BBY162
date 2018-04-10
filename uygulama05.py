@@ -1,34 +1,43 @@
-__author__='Tarık Ünal'
-#05.04.18
-print("Adamasmaca Oyununa Hoşgeldiniz.\n")
+"""Tarık Ünal"""
+print("Adamasmaca Oyununa Hoşgeldiniz..")
 import random
-i = 0
-Hak = 4
-file = open('kelimelistesi.txt', "r")
-sozluk = file.read().split()
-file.close()
-sozlukboyutu = len(sozluk)
-gizliKelime = sozluk[random.randint(0, sozlukboyutu)]
+AdamAsmaca = ("""=====""","""====""","""===""","""==""","""=""")
+maxCan = len(AdamAsmaca) - 1
+#file = open('kelimelistesi.txt', "r")
+#sozluk = file.read().split()
+#file.close()
+#sozlukboyutu = len(sozluk)
+#gizliKelime = sozluk[random.randint(0, sozlukboyutu)]
+kelimeler = ("hacettepe","telefon","manda","televizyon","mavi","porsuk","yarasa","balina","kobra","puma","karga","tavuk","tesla")
+gizliKelime = random.choice(kelimeler)
 #print(gizliKelime)
-bosluk = []
-
-for kelimeIslem in gizliKelime :
-    bosluk.append("_")
-print(bosluk)
-
-while Hak > 0:
-    i = 0
-    tahmin= input("\nHarf giriniz: ").lower()
+pano = "-" * len(gizliKelime)
+hak = 0
+havuz = []
+while hak <= maxCan and pano !=gizliKelime:
+    print(AdamAsmaca[hak])
+    print("\nBu harfleri kullandın: ", havuz )
+    print("Kelime: ", pano)
+    print("Kalan can: ", 4-hak)
+    tahmin = input("\nHarf giriniz: ").lower()
+    while tahmin in havuz:
+        print("\nBu harf zaten kullanıldı.")
+        tahmin = input("Harf giriniz: ").lower()
+    havuz.append(tahmin)
     if tahmin in gizliKelime:
-        for bak in gizliKelime:
-            if gizliKelime[i] == tahmin:
-                bosluk[i] = tahmin
-            i += 1
-        print(bosluk)
+        print("Güzel !!", tahmin, "harfi kelimede mevcut :)")
+        yeni = ""
+        for i in range(len(gizliKelime)):
+            if tahmin == gizliKelime[i]:
+                yeni += tahmin
+            else:
+                yeni += pano[i]
+        pano = yeni
     else:
-        i = 0
-        Hak -=1
-        print("Kalan Can:" + str(Hak))
-    if Hak == 0:
-        print('Kaybettin. Doğru kelime "{}" idi.\n'.format(gizliKelime))
-        break
+        print("Bulunamadın !!!")
+        hak += 1
+if hak > maxCan:
+    print("\nKaybettin :(")
+else:
+    print("\nTebrikler!! Kazandın :)  :)")
+print("Cevap: ", gizliKelime)
